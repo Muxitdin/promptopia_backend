@@ -22,7 +22,7 @@ const RunCode = () => {
     try {
         mongoose.connect(process.env.MONGO_URI);
         app.listen(process.env.PORT, () => {
-            console.log(`Server is running on https://promptopia-backend.vercel.app/`)
+            console.log(`Server is running on http://localhost:${process.env.PORT}`)
         });
     } catch (error) {
         console.log(error)

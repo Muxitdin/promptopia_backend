@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/", upload.single("image"), (req, res) => {
     console.log(req.file);
     res.json({
-        imgUrl: `https://promptopia-backend.vercel.app/${req.file.filename}`,
+        imgUrl: `http://localhost:5000/${req.file.filename}`,
     }).status(200);
 })
 
