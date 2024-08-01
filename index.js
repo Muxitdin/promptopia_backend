@@ -18,6 +18,10 @@ app.use("/api/prompts", promptRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/upload-image", imageRoutes);
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the API');
+});
+
 const RunCode = () => {
     try {
         mongoose.connect(process.env.MONGO_URI);
