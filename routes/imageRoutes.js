@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/", upload.single("image"), (req, res) => {
     console.log(req.file);
     res.json({
-        imgUrl: `http://localhost:5000/${req.file.filename}`,
+        imgUrl: `https://prompthub-96ry.onrender.com/${req.file.filename}`,
     }).status(200);
 })
 
