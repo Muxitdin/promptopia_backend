@@ -8,7 +8,7 @@ import imageRoutes from "./routes/imageRoutes.js"
 
 const app = express();
 
-if (app.get('env') === 'development') { // process.env.NODE_ENV
+if (app.get('env') === 'development' || app.get('env') === undefined ) { // process.env.NODE_ENV
     app.use(cors())
 };
 console.log(process.env.NODE_ENV)
