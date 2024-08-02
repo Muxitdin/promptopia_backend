@@ -8,7 +8,10 @@ import imageRoutes from "./routes/imageRoutes.js"
 
 const app = express();
 
-app.use(cors());
+if (app.get('env') === 'development') { // process.env.NODE_ENV
+    app.use(cors())
+};
+console.log(process.env.NODE_ENV)
 app.use(express.json());
 dotenv.config();
 
