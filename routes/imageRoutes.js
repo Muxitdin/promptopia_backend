@@ -9,12 +9,10 @@ router.post("/", upload.single("file"), (req, res) => {
         return res.status(400).json({ message: 'File upload failed' });
     }
 
-    const baseUrl = process.env.NODE_ENV === 'production'
-        ? 'https://promptopia-back.onrender.com/'
-        : 'http://localhost:5000/'
-
+    const baseUrl = 'https://promptopia-back.onrender.com'
+        
     res.json({
-        imgUrl: `${baseUrl}${req.file.filename}`,
+        imgUrl: `${baseUrl}/${req.file.filename}`,
     }).status(200);
 })
 

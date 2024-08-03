@@ -1,19 +1,13 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import cors from 'cors';
 import promptRoutes from "./routes/promptRoutes.js"
 import authRoutes from "./routes/authRoutes.js"
 import imageRoutes from "./routes/imageRoutes.js"
 
 const app = express();
 
-// const allowedOrigins = ['https://prompthub-96ry.onrender.com'];
 
-// app.use(cors({
-//     origin: allowedOrigins,
-//     credentials: true,
-// }));
 app.use(express.json());
 dotenv.config();
 
