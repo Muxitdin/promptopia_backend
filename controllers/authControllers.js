@@ -25,7 +25,7 @@ export const RegisterNewUser = async (req, res) => {
             const hashedPassword = await bcrypt.hash(password, 10);
             userData.password = hashedPassword;
             const newUser = await Auth.create(userData);
-            const token = generateAccessToken(newUser._id);
+            const token = generateAccessToken(newUser?._id);
             res.status(201).json({data: newUser, token,  message: "User created successfully"});
         }
     } catch (error) {
@@ -38,7 +38,7 @@ export const LoginUser = async (req, res) => {
     const userExists = await Auth.findOne({ email });
     if (!userExists) return res.status(404).json({ message: "User not found" });
     
-    const token = generateAccessToken(userExists._id);
+    const token = generateAccessToken(userExists?._id);
 
     const isPasswordValid = await bcrypt.compare(password, userExists.password);
     if (!isPasswordValid) return res.status(400).json({ message: "Invalid password" });
