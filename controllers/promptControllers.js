@@ -16,7 +16,7 @@ export const CreateNewPrompt = async (req, res) => {
         const promptData = { content, tag, author }
         
         const newPrompt = await Prompt.create(promptData)
-        res.status(201).json({data: newPrompt, message: "Prompt created succesqqqsfully"});
+        res.status(201).json({data: newPrompt, message: "Prompt created successfully"});
     } catch (error) {
         console.log(error)
     }
