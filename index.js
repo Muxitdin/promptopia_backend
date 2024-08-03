@@ -8,12 +8,12 @@ import imageRoutes from "./routes/imageRoutes.js"
 
 const app = express();
 
-const allowedOrigins = ['https://prompthub-96ry.onrender.com'];
+// const allowedOrigins = ['https://prompthub-96ry.onrender.com'];
 
-app.use(cors({
-    origin: allowedOrigins,
-    credentials: true,
-}));
+// app.use(cors({
+//     origin: allowedOrigins,
+//     credentials: true,
+// }));
 app.use(express.json());
 dotenv.config();
 
