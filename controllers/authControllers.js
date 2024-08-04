@@ -15,7 +15,7 @@ export const RegisterNewUser = async (req, res) => {
         password,
         image
     }
-
+    console.log(userData)
     // Check if user already exists
     const userExists = await Auth.findOne({ email });
     if (userExists) return res.status(400).json({ message: "User already exists" });
