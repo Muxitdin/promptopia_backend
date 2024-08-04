@@ -17,7 +17,7 @@ dotenv.config();
 // Create storage engine
 const storage = new GridFsStorage({
     url: process.env.MONGO_URI,
-    file: (req, file) => {
+    file: (req, { file }) => {
         console.log("file info: " + file)
         return {
             bucketName: 'uploads', // The bucket name in MongoDB
