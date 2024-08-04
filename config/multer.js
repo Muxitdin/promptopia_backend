@@ -17,7 +17,6 @@ dotenv.config();
 // Create storage engine
 const storage = new GridFsStorage({
     url: process.env.MONGO_URI,
-    options: { useNewUrlParser: true, useUnifiedTopology: true },
     file: (req, file) => {
         console.log("file info: " + file)
         return {
