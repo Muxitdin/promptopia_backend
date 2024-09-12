@@ -21,7 +21,7 @@ export const RegisterNewUser = async (req, res) => {
     if (userExists) return res.status(400).json({ message: "User already exists" });
 
     try {
-        if (fullName && email && password && image) {
+        if (fullName && email && password) {
             const hashedPassword = await bcrypt.hash(password, 10);
             userData.password = hashedPassword;
             const newUser = await Auth.create(userData);
